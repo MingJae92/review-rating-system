@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 function Category() {
   return (
-    <div>Category</div>
-  )
+    <div>
+      <Navbar />
+      Category
+    </div>
+  );
 }
 
-export default Category
+export default Category;
