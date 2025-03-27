@@ -1,6 +1,6 @@
 import { SxProps, Theme } from "@mui/system";
 
-export const navbarStyles: Record<string, SxProps<Theme>> = {
+const navbarStyles: Record<string, SxProps<Theme>> = {
   navbar: {
     backgroundColor: "white",
     color: "black",
@@ -26,3 +26,5 @@ export const navbarStyles: Record<string, SxProps<Theme>> = {
     gap: 2,
   },
 };
+
+export default navbarStyles;

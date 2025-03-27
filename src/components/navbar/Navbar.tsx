@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography, IconButton, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { navbarStyles } from "../../styles/navbarStyles/navbar.styles";
+import navbarStyles  from "../../styles/navbarStyles/navbar.styles";
 
 const Navbar = () => {
   return (
