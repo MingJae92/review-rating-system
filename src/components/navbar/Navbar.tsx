@@ -1,34 +1,55 @@
-import { AppBar, Toolbar, Typography, IconButton, Box } from "@mui/material";
+import { useState } from "react";
+import { AppBar, Toolbar, Typography, IconButton, Box, Drawer, List, ListItem, ListItemText } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import navbarStyles  from "../../styles/navbarStyles/navbar.styles";
+import navbarStyles from "../../styles/navbarStyles/navbar.styles";
+import SidebarData from "../sidebarDrawer/SidebarData";
 
 const Navbar = () => {
+  const [openSidebar, setOpenSidebar] = useState<boolean>(false);
+
+  const toggleSidebar = () => {
+    setOpenSidebar(!openSidebar); // Toggle sidebar open/close
+  };
+
   return (
-    <AppBar position="sticky" sx={navbarStyles.navbar}>
-      <Toolbar sx={navbarStyles.toolbar}>
-        {/* Left: Menu Button */}
-        <IconButton sx={navbarStyles.iconButton}>
-          <MenuIcon />
-        </IconButton>
-
-        {/* Center: Wirecutter Logo */}
-        <Typography variant="h6" sx={navbarStyles.logo}>
-          Wirecutter
-        </Typography>
-
-        {/* Right: Search & Account Icons */}
-        <Box sx={navbarStyles.rightIcons}>
-          <IconButton sx={navbarStyles.iconButton}>
-            <SearchIcon />
+    <div>
+      <AppBar position="sticky" sx={navbarStyles.navbar}>
+        <Toolbar sx={navbarStyles.toolbar}>
+          {/* Left: Menu Button */}
+          <IconButton sx={navbarStyles.iconButton} onClick={toggleSidebar}>
+            <MenuIcon />
           </IconButton>
-          <IconButton sx={navbarStyles.iconButton}>
-            <AccountCircleIcon />
-          </IconButton>
-        </Box>
-      </Toolbar>
-    </AppBar>
+
+          {/* Center: Wirecutter Logo */}
+          <Typography variant="h6" sx={navbarStyles.logo}>
+            Wirecutter
+          </Typography>
+
+          {/* Right: Search & Account Icons */}
+          <Box sx={navbarStyles.rightIcons}>
+            <IconButton sx={navbarStyles.iconButton}>
+              <SearchIcon />
+            </IconButton>
+            <IconButton sx={navbarStyles.iconButton}>
+              <AccountCircleIcon />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      {/* Sidebar Drawer */}
+      <Drawer anchor="left" open={openSidebar} onClose={toggleSidebar}>
+        <List sx={{ width: 250 }}>
+          {SidebarData.map((item, index) => (
+            <ListItem button key={index} onClick={toggleSidebar}>
+              <ListItemText primary={item.name} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </div>
   );
 };
 

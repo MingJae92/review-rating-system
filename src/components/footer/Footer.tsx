@@ -1,6 +1,5 @@
-import React from 'react';
-import { Container, Grid, Link, Typography, Box } from '@mui/material';
-import footerStyles from '../../styles/footerStyles/footer.styles';  // Import the default export for styles
+import { Container, Grid, Link, Typography, Box } from "@mui/material";
+import footerStyles from "../../styles/footerStyles/footer.styles"; // Import the default export for styles
 
 const Footer = () => {
   return (
