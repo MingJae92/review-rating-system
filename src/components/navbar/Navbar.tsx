@@ -1,10 +1,21 @@
 import { useState } from "react";
-import { AppBar, Toolbar, Typography, IconButton, Box, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import navbarStyles from "../../styles/navbarStyles/navbar.styles";
 import SidebarData from "../sidebarDrawer/SidebarData";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
@@ -44,7 +55,9 @@ const Navbar = () => {
         <List sx={{ width: 250 }}>
           {SidebarData.map((item, index) => (
             <ListItem button key={index} onClick={toggleSidebar}>
-              <ListItemText primary={item.name} />
+              <Link to={item.path}>  
+                <ListItemText primary={item.name} />
+              </Link>
             </ListItem>
           ))}
         </List>
