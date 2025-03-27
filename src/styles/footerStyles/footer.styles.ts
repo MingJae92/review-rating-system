@@ -2,13 +2,11 @@ import { SxProps, Theme } from '@mui/system';
 
 const footerStyles: { [key: string]: SxProps<Theme> } = {
   footerContainer: {
-    position: 'fixed', // Keep the footer fixed at the bottom
-    bottom: 0,         // Ensure it stays at the bottom
-    left: 0,           // Align it to the left side
-    width: '100%',     // Ensure it spans the entire width of the screen
+    position: 'relative',  // Change from 'fixed' to 'relative'
+    width: '100%',         // Ensure it spans the entire width of the screen
     backgroundColor: '#f8f8f8',
     padding: '20px 0',
-    zIndex: 10,        // Keep it on top of other content
+    zIndex: 10,            // Optional, depending on your design needs
   },
   gridItem: {
     marginBottom: 1,

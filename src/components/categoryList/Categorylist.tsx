@@ -1,4 +1,3 @@
-import React from "react";
 import { Grid, CardContent, Typography } from "@mui/material";
 import categoryListStyles from "../../styles/categoryListStyles/categoryList.styles";
 
@@ -29,7 +28,9 @@ const CategoryList = () => {
           <Grid item xs={12} sm={6} md={4} key={category.id}>
             <categoryListStyles.StyledCard>
               <CardContent>
-                <categoryListStyles.CardTitle>{category.title}</categoryListStyles.CardTitle>
+                <categoryListStyles.CardTitle>
+                  {category.title}
+                </categoryListStyles.CardTitle>
                 <categoryListStyles.CardDescription>
                   {category.description}
                 </categoryListStyles.CardDescription>

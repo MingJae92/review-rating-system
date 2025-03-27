@@ -55,7 +55,7 @@ const Navbar = () => {
         <List sx={{ width: 250 }}>
           {SidebarData.map((item, index) => (
             <ListItem button key={index} onClick={toggleSidebar}>
-              <Link to={item.path}>  
+              <Link to={item.path}>
                 <ListItemText primary={item.name} />
               </Link>
             </ListItem>

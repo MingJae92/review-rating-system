@@ -1,5 +1,11 @@
-import React from 'react';
-import { HeroContainer, HeroContent, Title, Description, CtaButton } from '../../styles/heroStyles/hero.styles'; // Importing from styles.ts
+import React from "react";
+import {
+  HeroContainer,
+  HeroContent,
+  Title,
+  Description,
+  CtaButton,
+} from "../../styles/heroStyles/hero.styles"; // Importing from styles.ts
 
 const Hero = () => {
   return (
@@ -9,7 +15,8 @@ const Hero = () => {
           Shop the Latest Collection
         </Title>
         <Description variant="body1">
-          Discover new arrivals, exclusive offers, and much more. Limited time only!
+          Discover new arrivals, exclusive offers, and much more. Limited time
+          only!
         </Description>
         <CtaButton variant="contained" color="primary">
           Shop Now
